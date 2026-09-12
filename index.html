@@ -19,14 +19,16 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <button id="themebutton">Dark/Light Mode</button>
         </div>
     </nav>
     
     <section id="home">
     <h1>Hi, I'm Het. I'm an ICT student and developer.
-        I build things with C++, Python, and web technologies — currently exploring AI/ML and full-stack development.</p>
+        I build things with C++, Python, and web technologies — currently exploring AI/ML and full-stack development.
     
     </h1>
+    
    
     
 </section>
@@ -86,7 +88,12 @@ projects and learning new technologies.</li>
     </section>
     <section id="projects">
         <h2>Projects</h2>
-    <article>
+        <select id="projectfilter">
+            <option value="all">All Projects</option>
+            <option value="cpp">CPP</option>
+            <option value="database">Database</option>
+        </select>
+    <article data-category="cpp">
               
               <h3>Social Network Graph Analyzer </h3>
               <ul>
@@ -98,7 +105,7 @@ community detection across 10+ supported operations; benchmarked on the SNAP Fac
 through the network, identifying key bridge users whose removal would disconnect parts of the network.</li>
 </ul>
 </article>
-<article>
+<article data-category="database">
             <h3>Airbnb Database Design & Analytics</h3>
             <ul>
             <li> Designed a normalized PostgreSQL database for an Airbnb-like platform, modeling 12 entities (Users, Hosts, Guests,
@@ -122,12 +129,43 @@ aggregate functions to enforce business logic like booking and cancellation rule
         <a href="https://github.com/DeadJoker24">GitHub</a>
     </li>
     <li>
-        <a href="https://www.linkedin.com/in/het-p-3108612a4/">Linkedin</a>
+        <a href="https://www.linkedin.com/in/het-p-3108612a4/">Linkedin</a></li>
      </ul>
+    <form
+    id="contactForm"
+    action="https://formspree.io/f/mljeyelw"
+    method="POST"
+>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your name"
+        required
+    >
+
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Your email"
+        required
+    >
+
+    <textarea
+        id="message"
+        name="message"
+        placeholder="Your message"
+        required
+    ></textarea>
+
+    <button type="submit">Send Message</button>
+</form>
+
+<p id="formMessage"></p>
     
     </section>
     
-
+<script src="script.js"></script>
 </body>
 </html>
-
